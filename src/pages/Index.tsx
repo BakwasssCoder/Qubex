@@ -42,7 +42,7 @@ const Index = () => {
             </p>
             
             <p className="text-base md:text-lg font-semibold mb-8 text-accent">
-              Aapka samaan, hamari zimmedari — Qubex brings city stores to your door
+              Your goods, our responsibility — Qubex brings city stores to your door
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -231,6 +231,37 @@ const Index = () => {
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Delivery Partners */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted Delivery Partners</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We collaborate with the best logistics partners to ensure your deliveries arrive safely and on time.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto items-center justify-center">
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/dhl.svg" alt="DHL" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">DHL</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/dtdc.svg" alt="DTDC" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">DTDC</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/bluedart.svg" alt="BlueDart" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">BlueDart</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/fedex.svg" alt="FedEx" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">FedEx</span>
+            </div>
           </div>
         </div>
       </section>

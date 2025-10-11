@@ -25,13 +25,13 @@ const Pricing = () => {
             </div>
             <div className="text-2xl font-bold text-center">+</div>
             <div className="border-l-4 border-accent pl-6">
-              <h3 className="font-bold mb-2">Service Margin: ₹200</h3>
-              <p className="text-sm text-muted-foreground">Fixed per order for sourcing, verification & packaging</p>
+              <h3 className="font-bold mb-2">Service Margin: ₹150-₹300</h3>
+              <p className="text-sm text-muted-foreground">Depends on item size, weight and other circumstances</p>
             </div>
             <div className="text-2xl font-bold text-center">+</div>
             <div className="border-l-4 border-accent pl-6">
-              <h3 className="font-bold mb-2">Delivery Fee: ₹50-₹150</h3>
-              <p className="text-sm text-muted-foreground">Based on distance & urgency</p>
+              <h3 className="font-bold mb-2">Delivery Fee</h3>
+              <p className="text-sm text-muted-foreground">Based on distance & item - but believe me, it's really very low!</p>
             </div>
           </div>
         </div>

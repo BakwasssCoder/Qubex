@@ -19,12 +19,15 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-panel shadow-elegant">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-panel shadow-elegant backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl md:text-3xl font-bold">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="bg-accent rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <span className="text-primary font-bold text-lg">Q</span>
+            </div>
+            <div className="text-2xl md:text-3xl font-bold transition-all duration-300 group-hover:tracking-wider">
               <span className="text-primary">QU</span>
               <span className="text-accent">BEX</span>
             </div>
@@ -36,8 +39,8 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  isActive(item.path) ? "text-accent" : "text-foreground"
+                className={`text-sm font-medium transition-all duration-300 hover:text-accent hover:scale-105 ${
+                  isActive(item.path) ? "text-accent scale-105" : "text-foreground"
                 }`}
               >
                 {item.name}
@@ -48,16 +51,11 @@ const Navigation = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a href="tel:+919515850682">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Phone className="h-4 w-4" />
+              <Button variant="outline" size="sm" className="gap-2 transition-all duration-300 hover:scale-105">
+                <Phone className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
                 Call Now
               </Button>
             </a>
-            <Link to="/admin">
-              <Button size="sm" className="gradient-gold text-primary font-semibold">
-                Admin
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,7 +70,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden py-4 space-y-4 border-t border-border">
+          <div className="lg:hidden py-4 space-y-4 border-t border-border animate-fadeIn">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -92,11 +90,6 @@ const Navigation = () => {
                   Call Now
                 </Button>
               </a>
-              <Link to="/admin" className="block">
-                <Button className="w-full gradient-gold text-primary font-semibold">
-                  Admin Login
-                </Button>
-              </Link>
             </div>
           </div>
         )}

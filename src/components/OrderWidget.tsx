@@ -9,8 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Package, Phone, Copy, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 import { QRCodeSVG } from "qrcode.react";
+import { useAppContext } from "@/context/AppContext";
 
 const orderSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -29,6 +29,7 @@ interface OrderWidgetProps {
 }
 
 const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
+  const { addOrder } = useAppContext();
   const [isOpen, setIsOpen] = useState(!isSticky);
   const [showPayment, setShowPayment] = useState(false);
   const [orderData, setOrderData] = useState<OrderFormData | null>(null);
@@ -65,20 +66,13 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
     try {
       const estimatedPrice = calculateEstimate(orderData.items);
       
-      // Save to database
-      const { error } = await supabase.from("orders").insert({
-        customer_name: orderData.name,
-        customer_phone: orderData.phone,
-        city: orderData.city,
-        delivery_address: orderData.address,
-        items: orderData.items,
-        urgency: orderData.urgency,
-        payment_method: "upi",
-        payment_ref: orderData.payment_ref || "",
-        estimated_price: estimatedPrice,
+      // Save to local context instead of database
+      addOrder({
+        customer: orderData.name,
+        item: orderData.items,
+        status: "Pending",
+        date: new Date().toISOString().split('T')[0],
       });
-
-      if (error) throw error;
 
       // Create WhatsApp deep link
       const urgencyMap = {
@@ -349,9 +343,6 @@ const OrderForm = ({ form, onSubmit, compact = false }: OrderFormProps) => {
             <Package className="h-4 w-4" />
             Continue to Payment
           </Button>
-          <p className="text-xs text-center text-muted-foreground">
-            Pay via UPI • Est. ₹260 (₹200 service + ₹60 delivery)
-          </p>
         </div>
       </form>
     </Form>
