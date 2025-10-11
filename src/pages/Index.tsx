@@ -60,14 +60,10 @@ const Index = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="glass-panel p-4 rounded-xl">
                 <div className="text-2xl font-bold text-accent mb-1">24/7</div>
                 <div className="text-sm text-white/80">Always Open</div>
-              </div>
-              <div className="glass-panel p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent mb-1">30min</div>
-                <div className="text-sm text-white/80">Avg Delivery</div>
               </div>
               <div className="glass-panel p-4 rounded-xl">
                 <div className="text-2xl font-bold text-accent mb-1">100%</div>
