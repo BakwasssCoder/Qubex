@@ -252,7 +252,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-7xl mx-auto items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 max-w-7xl mx-auto items-center justify-center">
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
               <img src="/logos/dhl.svg" alt="DHL" className="w-24 h-24 mb-4 object-contain" />
               <span className="font-semibold text-lg">DHL</span>
@@ -276,6 +276,14 @@ const Index = () => {
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
               <img src="/logos/wefast.svg" alt="Wefast" className="w-24 h-24 mb-4 object-contain" />
               <span className="font-semibold text-lg">Wefast</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/cargo.svg" alt="Cargo Services" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">Cargo</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/traincargo.svg" alt="Train Cargo Services" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">Train Cargo</span>
             </div>
           </div>
         </div>
