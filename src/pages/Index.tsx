@@ -17,7 +17,7 @@ const Index = () => {
       <OrderWidget isSticky />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40" />
@@ -33,10 +33,16 @@ const Index = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-              We Buy And Deliver
+              We Buy And Deliver To You
               <br />
               <span className="text-orange-300">Anything-Anywhere-Anytime</span>
             </h1>
+            
+            <div className="mb-6">
+              <p className="text-sm md:text-base font-bold text-white">
+                Made in India, Made for India
+              </p>
+            </div>
             
             <p className="text-lg md:text-xl mb-4 text-white max-w-3xl mx-auto font-medium">
               <TypingAnimation 

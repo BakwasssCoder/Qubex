@@ -175,7 +175,7 @@ Please confirm the final price and delivery time. Thank you!`;
               <Button
                 type="button"
                 onClick={handlePaymentConfirm}
-                className="flex-1 gradient-gold text-primary font-semibold gap-2"
+                className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold gap-2 hover:from-yellow-500 hover:to-orange-600"
               >
                 <Phone className="h-4 w-4" />
                 Confirm on WhatsApp
@@ -337,7 +337,7 @@ const OrderForm = ({ form, onSubmit, compact = false }: OrderFormProps) => {
 
 
         <div className="pt-4 space-y-2">
-          <Button type="submit" className="w-full gradient-gold text-primary font-semibold gap-2">
+          <Button type="submit" className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold gap-2 hover:from-yellow-500 hover:to-orange-600">
             <Package className="h-4 w-4" />
             Continue to Payment
           </Button>

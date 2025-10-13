@@ -34,12 +34,12 @@ const HowItWorks = () => {
                 <h2 className="text-2xl font-bold mb-3">Send Your Request</h2>
                 <p className="text-muted-foreground mb-4">
                   Fill out our order form or directly WhatsApp us at <a href="tel:+919515850682" className="text-orange-600 hover:underline">+91 95158 50682</a>. 
-                  Share your name, address, and a list of items you need. Include medicine names, dosages, and quantities for accuracy.
+                  Share your name, address, and a list of items you need. Include details like brand, model, or specific requirements for accuracy.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-orange-600 mt-0.5" />
-                    <span className="text-sm">For prescription meds, be ready to send prescription photo</span>
+                    <span className="text-sm">For electronics or specific items, include model numbers</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-orange-600 mt-0.5" />
@@ -64,7 +64,7 @@ const HowItWorks = () => {
                 <div className="text-green-600 font-bold mb-2">Step 2</div>
                 <h2 className="text-2xl font-bold mb-3">We Source & Confirm Price</h2>
                 <p className="text-muted-foreground mb-4">
-                  Our team immediately starts sourcing your items from verified pharmacies and suppliers. We check availability, 
+                  Our team immediately starts sourcing your items from verified suppliers and stores. We check availability, 
                   compare prices, and calculate the total including delivery fees. You'll receive a confirmed quote on WhatsApp within minutes.
                 </p>
                 <ul className="space-y-2">
@@ -74,7 +74,7 @@ const HowItWorks = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-sm">If items unavailable, we suggest alternatives</span>
+                    <span className="text-sm">If items unavailable, we suggest alternatives or source from other locations</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-600 mt-0.5" />
@@ -126,13 +126,13 @@ const HowItWorks = () => {
                 <div className="text-green-600 font-bold mb-2">Step 4</div>
                 <h2 className="text-2xl font-bold mb-3">Delivery to Your Doorstep</h2>
                 <p className="text-muted-foreground mb-4">
-                  Our trained riders deliver your order directly to your address. For urgent orders, expect delivery within 30-60 minutes. 
+                  Our trained delivery partners bring your order directly to your address. For urgent orders, expect delivery within 30-60 minutes. 
                   Standard orders arrive within 24 hours. Village deliveries may take up to 48 hours depending on distance.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-sm">Track your rider via WhatsApp updates</span>
+                    <span className="text-sm">Track your delivery via WhatsApp updates</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-600 mt-0.5" />
@@ -155,21 +155,21 @@ const HowItWorks = () => {
                 <div>
                   <h4 className="font-bold mb-2 flex items-center gap-2">
                     <Phone className="h-5 w-5 text-orange-600" />
-                    Emergency / Hospital Sourcing
+                    Event & Bulk Orders
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    For post-surgery or ICU discharge needs, we source from multiple pharmacies and deliver everything in one go. 
-                    Call us directly for immediate assistance.
+                    For parties, weddings, or business events, we handle bulk sourcing and delivery of all your requirements. 
+                    Call us directly for immediate assistance with large orders.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold mb-2 flex items-center gap-2">
                     <MessageSquare className="h-5 w-5 text-orange-600" />
-                    Recurring Prescriptions
+                    Custom Shopping
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Set up monthly or weekly deliveries for chronic medications. We'll remember your order and deliver on schedule 
-                    without you having to request each time.
+                    Need something specific but don't have time to shop? Our personal shoppers can find and deliver exactly what you need, 
+                    from gifts to gadgets to groceries.
                   </p>
                 </div>
               </div>
