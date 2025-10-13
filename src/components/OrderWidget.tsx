@@ -64,8 +64,6 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
     if (!orderData) return;
 
     try {
-      const estimatedPrice = calculateEstimate(orderData.items);
-      
       // Save to local context instead of database
       addOrder({
         customer: orderData.name,
@@ -81,8 +79,10 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
         scheduled: "Scheduled delivery",
       };
 
-      const paymentRef = orderData.payment_ref ? `(Ref: ${orderData.payment_ref})` : "(Payment pending)";
+      // Changed "Payment pending" to "Verifying...."
+      const paymentRef = orderData.payment_ref ? `(Ref: ${orderData.payment_ref})` : "(Verifying....)";
 
+      // Removed estimated price from the message
       const message = `Hello Qubex Team,
 
 I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
@@ -94,8 +94,6 @@ ${orderData.items}
 
 ⏰ Urgency: ${urgencyMap[orderData.urgency]}
 💳 Payment: UPI ${paymentRef}
-
-💰 Estimated Price: ₹${estimatedPrice}
 
 Please confirm the final price and delivery time. Thank you!`;
 
@@ -196,10 +194,10 @@ Please confirm the final price and delivery time. Thank you!`;
           <Button
             onClick={() => setIsOpen(true)}
             size="lg"
-            className="gradient-gold text-primary font-semibold shadow-glow gap-2 rounded-full h-14 px-6"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg gap-2 rounded-full h-14 px-6 hover:from-orange-600 hover:to-orange-700"
           >
             <Package className="h-5 w-5" />
-            Place Order
+            Book Service
           </Button>
         )}
 

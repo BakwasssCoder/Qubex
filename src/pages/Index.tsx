@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Shield, Truck, Heart, Pill, ShoppingBag } from "lucide-react";
+import { ArrowRight, Clock, Shield, Truck, Heart, Pill, ShoppingBag, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import OrderWidget from "@/components/OrderWidget";
+import TypingAnimation from "@/components/TypingAnimation";
 import heroImage from "@/assets/hero-delivery.jpg";
 import medicineIcon from "@/assets/medicine-icon.png";
 import groceryIcon from "@/assets/grocery-icon.png";
@@ -19,41 +20,47 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 gradient-hero opacity-95" />
-          <img src={heroImage} alt="Qubex Delivery" className="w-full h-full object-cover mix-blend-overlay opacity-40" />
+          <div className="absolute inset-0 bg-black/40" />
+          <img src={heroImage} alt="Qubex Delivery" className="w-full h-full object-cover mix-blend-overlay opacity-70" />
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-accent/30">
-              <Clock className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium text-accent">Available 24/7 • Emergency Ready</span>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-orange-200 shadow-lg mx-auto">
+              <Clock className="h-4 w-4 text-orange-600" />
+              <span className="text-sm font-bold text-orange-800">Available 24/7 • Emergency Ready</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              We Deliver Anything,
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+              We Buy And Deliver
               <br />
-              <span className="text-accent">Anytime</span>
+              <span className="text-orange-300">Anything-Anywhere-Anytime</span>
             </h1>
             
-            <p className="text-lg md:text-xl mb-4 text-white/90 max-w-3xl mx-auto">
-              From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.
+            <p className="text-lg md:text-xl mb-4 text-white max-w-3xl mx-auto font-medium">
+              <TypingAnimation 
+                texts={[
+                  "From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.\n\nYour virtual assistant — shop anything, anywhere, anytime, right from your place. For detailed service information, connect with us now.",
+                  "From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.\n\nYour virtual assistant — shop anything, anywhere, anytime, right from your place. For detailed service information, connect with us now.",
+                ]}
+                speed={50}
+                pauseDuration={2000}
+                resetOnComplete={true}
+              />
             </p>
             
-            <p className="text-base md:text-lg font-semibold mb-8 text-accent">
-              Your goods, our responsibility — Qubex brings city stores to your door
-            </p>
+            {/* Slogan moved to header */}
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a href="https://wa.me/919515850682?text=Hello%20Qubex,%20I%20need%20urgent%20delivery">
-                <Button size="lg" className="gradient-gold text-primary font-semibold gap-2 shadow-glow text-lg px-8 py-6">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold gap-2 shadow-lg text-lg px-8 py-6 hover:from-orange-600 hover:to-orange-700 transition-all">
                   Order on WhatsApp
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </a>
               <Link to="/how-it-works">
-                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="bg-white/80 border-orange-300 text-orange-700 hover:bg-white font-bold text-lg px-8 py-6 shadow-lg">
                   How It Works
                 </Button>
               </Link>
@@ -61,17 +68,17 @@ const Index = () => {
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="glass-panel p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent mb-1">24/7</div>
-                <div className="text-sm text-white/80">Always Open</div>
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-orange-600 mb-1">24/7</div>
+                <div className="text-sm font-bold text-gray-700">Always Open</div>
               </div>
-              <div className="glass-panel p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent mb-1">100%</div>
-                <div className="text-sm text-white/80">Verified</div>
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-green-600 mb-1">100%</div>
+                <div className="text-sm font-bold text-gray-700">Verified</div>
               </div>
-              <div className="glass-panel p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent mb-1">UPI</div>
-                <div className="text-sm text-white/80">Payment</div>
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-orange-600 mb-1">UPI</div>
+                <div className="text-sm font-bold text-gray-700">Payment</div>
               </div>
             </div>
           </div>
@@ -82,39 +89,39 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Qubex?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose Qubex?</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto text-lg font-bold">
               We're not just a delivery service. We're your on-demand delivery partner for anything you need, available 24/7.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Clock className="h-8 w-8 text-accent" />
+            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all bg-white/80">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <Clock className="h-8 w-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Emergency Ready</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Emergency Ready</h3>
+              <p className="text-gray-700 font-medium">
                 Urgent medicine at 3 AM? Electronics needed today? Event supplies in hours? We handle it all with priority delivery.
               </p>
             </div>
 
-            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Heart className="h-8 w-8 text-accent" />
+            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all bg-white/80">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <Heart className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Anything, Anywhere</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Anything, Anywhere</h3>
+              <p className="text-gray-700 font-medium">
                 Medicines, electronics, spare parts, groceries, event items — if city stores have it, we'll deliver it to you.
               </p>
             </div>
 
-            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Truck className="h-8 w-8 text-accent" />
+            <div className="glass-panel p-8 rounded-2xl shadow-elegant hover:shadow-glow transition-all bg-white/80">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <Truck className="h-8 w-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">City to Village</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">City to Village</h3>
+              <p className="text-gray-700 font-medium">
                 Serving Delhi, Hyderabad, Chennai, Patna — and delivering to nearby villages and rural areas nationwide.
               </p>
             </div>
@@ -126,54 +133,52 @@ const Index = () => {
       <section className="py-20 gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Deliver</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What services we provide</h2>
+            <p className="text-white/90 max-w-2xl mx-auto text-lg font-medium">
               From emergency medicines to electronics, spare parts, groceries, event items, and beyond — we've got you covered.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all hover:scale-105 cursor-pointer group">
-              <img src={medicineIcon} alt="Medicine" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-bold mb-3">Medicines & Healthcare</h3>
-              <p className="text-white/80 mb-4">
-                Prescription drugs, OTC medicines, health supplements, and medical equipment.
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 hover:bg-white/25 transition-all hover:scale-105 cursor-pointer group">
+              <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <ShoppingBag className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">🛒 Shop & Deliver</h3>
+              <p className="text-white/90 font-medium">
+                Groceries, medicines, clothes, gifts, and daily essentials — we buy and deliver fast.
               </p>
-              <Link to="/services" className="text-accent hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all hover:scale-105 cursor-pointer group">
-              <img src={groceryIcon} alt="Electronics" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-bold mb-3">Electronics & Appliances</h3>
-              <p className="text-white/80 mb-4">
-                Mobile accessories, spare parts, home appliances, gadgets, and tech essentials.
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 hover:bg-white/25 transition-all hover:scale-105 cursor-pointer group">
+              <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Pill className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">⚙ Electronics & Mechanical Spares</h3>
+              <p className="text-white/90 font-medium">
+                Get genuine spare parts for your electronics, vehicles, and machinery — delivered right to your door.
               </p>
-              <Link to="/services" className="text-accent hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all hover:scale-105 cursor-pointer group">
-              <img src={deliveryIcon} alt="Groceries & More" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-bold mb-3">Groceries & More</h3>
-              <p className="text-white/80 mb-4">
-                Daily groceries, event supplies, party items, custom orders — anything you need.
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 hover:bg-white/25 transition-all hover:scale-105 cursor-pointer group">
+              <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Heart className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">🎨 Printing & Decoration</h3>
+              <p className="text-white/90 font-medium">
+                Business diaries, posters, banners, and decoration items — we print and deliver anywhere.
               </p>
-              <Link to="/services" className="text-accent hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
-          </div>
 
-          <div className="text-center mt-12">
-            <Link to="/services">
-              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-semibold gap-2">
-                View All Services
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-            </Link>
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 hover:bg-white/25 transition-all hover:scale-105 cursor-pointer group">
+              <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Home className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">🏪 For Small Businesses & Shops</h3>
+              <p className="text-white/90 font-medium">
+                We help local shop owners and small businesses manage inventory, place stock orders, reduce lead time, and increase profits through reliable logistics support.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -241,7 +246,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-7xl mx-auto items-center justify-center">
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
               <img src="/logos/dhl.svg" alt="DHL" className="w-24 h-24 mb-4 object-contain" />
               <span className="font-semibold text-lg">DHL</span>
@@ -258,6 +263,14 @@ const Index = () => {
               <img src="/logos/fedex.svg" alt="FedEx" className="w-24 h-24 mb-4 object-contain" />
               <span className="font-semibold text-lg">FedEx</span>
             </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/porter.svg" alt="Porter" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">Porter</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/wefast.svg" alt="Wefast" className="w-24 h-24 mb-4 object-contain" />
+              <span className="font-semibold text-lg">Wefast</span>
+            </div>
           </div>
         </div>
       </section>
@@ -265,28 +278,28 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 gradient-gold">
         <div className="container mx-auto px-4 text-center">
-          <Shield className="h-16 w-16 text-primary mx-auto mb-6 animate-pulse" />
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <Shield className="h-16 w-16 text-orange-800 mx-auto mb-6 animate-pulse" />
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-4">
             Need Emergency Delivery?
           </h2>
-          <p className="text-primary/80 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-orange-900/90 text-lg mb-8 max-w-2xl mx-auto font-bold">
             Don't wait. Our team is standing by 24/7 to help you get what you need, when you need it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/919515850682?text=Hello%20Qubex,%20I%20need%20urgent%20delivery">
-              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-semibold gap-2 hover:scale-105 transition-transform">
+              <Button size="lg" className="bg-orange-800 text-white hover:bg-orange-900 font-bold gap-2 hover:scale-105 transition-transform shadow-lg">
                 WhatsApp Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </a>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:+919515850682">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-semibold hover:scale-105 transition-transform">
+                <Button size="lg" variant="outline" className="border-orange-800 text-orange-900 hover:bg-orange-100 font-bold hover:scale-105 transition-transform shadow-lg">
                   Call +91 95158 50682
                 </Button>
               </a>
               <a href="tel:+916202815368">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-semibold hover:scale-105 transition-transform">
+                <Button size="lg" variant="outline" className="border-orange-800 text-orange-900 hover:bg-orange-100 font-bold hover:scale-105 transition-transform shadow-lg">
                   Call +91 62028 15368
                 </Button>
               </a>

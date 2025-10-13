@@ -3,41 +3,48 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground mt-20">
+    <footer className="bg-white text-gray-900 mt-20 border-t border-gray-200">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
-          <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-primary-foreground">QU</span>
-              <span className="text-accent">BEX</span>
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-4">
+              <img 
+                src="/logos/QubexLogo.jpg" 
+                alt="Qubex Logo" 
+                className="h-12 w-12 rounded-full object-contain"
+              />
+              <div className="text-2xl font-bold">
+                <span className="text-gray-900">Qub</span>
+                <span className="text-orange-600">Ex</span>
+              </div>
             </div>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Your trusted partner for emergency medicine and essential deliveries, 24/7.
+            <p className="text-sm font-bold text-gray-800 mb-4">
+              Your trusted partner for buying and delivering anything from anywhere, anytime.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4 text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/how-it-works" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/how-it-works" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/services" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/pricing" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link to="/coverage" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/coverage" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Coverage Areas
                 </Link>
               </li>
@@ -46,20 +53,20 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
+            <h3 className="font-bold text-lg mb-4 text-gray-900">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/privacy" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/privacy" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/terms" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/contact" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Contact Us
                 </Link>
               </li>
@@ -68,43 +75,43 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-bold text-lg mb-4 text-gray-900">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-primary-foreground/80">
-                <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+919515850682" className="hover:text-accent transition-colors">
+              <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
+                <Phone className="h-4 w-4 text-orange-600" />
+                <a href="tel:+919515850682" className="hover:text-orange-600 transition-colors">
                   +91 95158 50682
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-primary-foreground/80">
-                <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+916202815368" className="hover:text-accent transition-colors">
+              <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
+                <Phone className="h-4 w-4 text-orange-600" />
+                <a href="tel:+916202815368" className="hover:text-orange-600 transition-colors">
                   +91 62028 15368
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-primary-foreground/80">
-                <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:gugulothrajkumar257@gmail.com" className="hover:text-accent transition-colors">
+              <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
+                <Mail className="h-4 w-4 text-orange-600" />
+                <a href="mailto:gugulothrajkumar257@gmail.com" className="hover:text-orange-600 transition-colors">
                   gugulothrajkumar257@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-primary-foreground/80">
-                <MapPin className="h-4 w-4 text-accent mt-0.5" />
+              <li className="flex items-start gap-2 text-sm font-bold text-gray-700">
+                <MapPin className="h-4 w-4 text-orange-600 mt-0.5" />
                 <span>Hyderabad, Chennai, NCR, Patna & Nearby Areas</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Qubex. All rights reserved.</p>
+        <div className="border-t border-gray-300 mt-8 pt-8 text-center">
+          <p className="font-bold text-gray-800">&copy; {new Date().getFullYear()} Qubex. All rights reserved.</p>
           <div className="mt-2 flex flex-col items-center gap-2">
-            <p>Developed by BakwasssCoder</p>
+            <p className="font-bold text-gray-800">Developed by BakwasssCoder</p>
             <a 
               href="https://instagram.com/anikettt.tsx" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 font-bold text-gray-700 hover:text-orange-600 transition-colors"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -116,7 +123,7 @@ const Footer = () => {
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round"
-                className="text-accent"
+                className="text-orange-600"
               >
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
