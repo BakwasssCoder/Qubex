@@ -219,7 +219,7 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://wa.me/919515850682?text=Hello%20Qubex,%20do%20you%20deliver%20[your%20item]?">
-                <Button size="lg" className="gradient-gold text-primary font-semibold gap-2">
+                <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold gap-2 hover:from-green-600 hover:to-green-700">
                   Ask on WhatsApp
                   <ArrowRight className="h-5 w-5" />
                 </Button>

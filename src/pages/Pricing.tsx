@@ -38,7 +38,9 @@ const Pricing = () => {
 
         <div className="text-center">
           <a href="https://wa.me/919515850682?text=Hello%20Qubex,%20I%20want%20to%20place%20an%20order">
-            <Button size="lg" className="gradient-gold text-primary font-semibold">Get Your Quote</Button>
+            <Button size="lg" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold hover:from-yellow-500 hover:to-orange-600 px-8 py-3 text-lg">
+              Get Your Quote
+            </Button>
           </a>
         </div>
       </div>

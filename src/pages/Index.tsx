@@ -206,7 +206,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Send Request</h3>
               <p className="text-muted-foreground">
-                Fill the form or WhatsApp us with your medicine list and address.
+                Fill our order form or WhatsApp us with your item list and delivery address. Include specific details like brand names, models, or quantities for accuracy.
               </p>
             </div>
 
@@ -216,7 +216,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Get Quote</h3>
               <p className="text-muted-foreground">
-                We confirm availability and send you the exact price on WhatsApp.
+                We source your items from verified suppliers and send you a confirmed price on WhatsApp within minutes. Includes item cost + service fee + delivery charges.
               </p>
             </div>
 
@@ -226,7 +226,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Pay & Receive</h3>
               <p className="text-muted-foreground">
-                Complete UPI payment, then your order arrives at your doorstep safely.
+                Complete payment via UPI (scan QR or use our UPI ID). Track your order via WhatsApp updates. Receive your items at your doorstep with bills included.
               </p>
             </div>
           </div>

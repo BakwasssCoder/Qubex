@@ -60,7 +60,7 @@ const Coverage = () => {
         <div className="text-center">
           <p className="mb-4 text-muted-foreground">Don't see your area? Show your love and trust!</p>
           <a href="https://wa.me/919515850682?text=Hello%20Qubex,%20do%20you%20deliver%20to%20my%20area?">
-            <Button className="gradient-gold text-primary font-semibold">Request Coverage</Button>
+            <Button className="gradient-gold font-bold text-gray-900">Request Coverage</Button>
           </a>
         </div>
       </div>
