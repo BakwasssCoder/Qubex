@@ -34,6 +34,7 @@ const Navigation = () => {
               <div className="flex items-baseline">
                 <span className="text-white text-3xl md:text-4xl font-bold transition-all duration-300 group-hover:tracking-wider">Qub</span>
                 <span className="text-orange-400 text-3xl md:text-4xl font-bold transition-all duration-300 group-hover:tracking-wider">Ex</span>
+                <sup className="text-white text-xs md:text-sm mt-2">™</sup>
               </div>
             </div>
             <div className="text-black text-xs md:text-sm font-bold mt-1 ml-1">
@@ -105,6 +106,7 @@ const Navigation = () => {
                   <div className="flex items-baseline">
                     <span className="text-white text-3xl font-bold transition-all duration-300 group-hover:tracking-wider">Qub</span>
                     <span className="text-orange-400 text-3xl font-bold transition-all duration-300 group-hover:tracking-wider">Ex</span>
+                    <sup className="text-white text-xs mt-2">™</sup>
                   </div>
                 </div>
                 <div className="text-black text-xs font-bold mt-1 ml-1">

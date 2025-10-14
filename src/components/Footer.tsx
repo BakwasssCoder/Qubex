@@ -17,6 +17,7 @@ const Footer = () => {
               <div className="text-2xl font-bold">
                 <span className="text-gray-900">Qub</span>
                 <span className="text-orange-600">Ex</span>
+                <sup className="text-gray-900 text-xs">™</sup>
               </div>
             </div>
             <p className="text-sm font-bold text-gray-800 mb-4">
