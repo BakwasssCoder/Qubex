@@ -105,6 +105,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-300 mt-8 pt-8 text-center">
+          <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6 rounded">
+            <p className="font-bold text-lg">IMPORTANT NOTE:</p>
+            <p className="mt-2">
+              Qubex:BuyNdeliver operates under registration as a service intermediary. We procure products from authorized sellers on behalf of customers. 
+              Qubex does not manufacture, stock, or resell any items. All purchases are verified and billed directly from the source seller. 
+              Official registration documents (GST, LLP, etc.) are in process.
+            </p>
+          </div>
           <p className="font-bold text-gray-800">&copy; {new Date().getFullYear()} Qubex. All rights reserved.</p>
           <div className="mt-2 flex flex-col items-center gap-2">
             <p className="font-bold text-gray-800">Developed by BakwasssCoder</p>
