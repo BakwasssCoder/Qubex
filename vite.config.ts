@@ -19,8 +19,34 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: {
+          vendor: [
+            'react',
+            'react-dom',
+            'react-router-dom',
+          ],
+          ui: [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+          ],
+          data: [
+            '@tanstack/react-query',
+            'zod',
+            'react-hook-form',
+          ],
+          utils: [
+            'lucide-react',
+            'clsx',
+            'tailwind-merge',
+            'class-variance-authority',
+          ]
+        },
       },
     },
+    chunkSizeWarningLimit: 1000, // Increase limit to reduce warnings
   },
 }));
