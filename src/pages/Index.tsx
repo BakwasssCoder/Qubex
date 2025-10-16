@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import OrderWidget from "@/components/OrderWidget";
-// import TypingAnimation from "@/components/TypingAnimation";
+import TypingAnimation from "@/components/TypingAnimation";
 import heroImage from "@/assets/hero-delivery.jpg";
 import medicineIcon from "@/assets/medicine-icon.png";
 import groceryIcon from "@/assets/grocery-icon.png";
@@ -45,17 +45,14 @@ const Index = () => {
             </div>
             
             <p className="text-lg md:text-xl mb-4 text-white max-w-3xl mx-auto font-medium">
-              {/* <TypingAnimation 
+              <TypingAnimation 
                 texts={[
-                  "From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.\n\nYour virtual assistant — shop anything, anywhere, anytime, right from your place. For detailed service information, connect with us now.",
                   "From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.\n\nYour virtual assistant — shop anything, anywhere, anytime, right from your place. For detailed service information, connect with us now.",
                 ]}
                 speed={50}
                 pauseDuration={2000}
                 resetOnComplete={true}
-              /> */}
-              From medicines to electronics, spare parts, groceries, event items, and custom orders — from city markets to your village doorstep.
-              Your virtual assistant — shop anything, anywhere, anytime, right from your place. For detailed service information, connect with us now.
+              />
             </p>
             
             {/* Slogan moved to header */}

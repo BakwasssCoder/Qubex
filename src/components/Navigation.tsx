@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import TypingAnimation from "@/components/TypingAnimation";
+import TypingAnimation from "@/components/TypingAnimation";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,15 +45,14 @@ const Navigation = () => {
           {/* Slogan - Visible on larger screens */}
           <div className="hidden lg:block flex-1 mx-4">
             <p className="font-bold text-sm md:text-base text-center">
-              {/* <TypingAnimation 
+              <TypingAnimation 
                 texts={["Your Needs, our responsibility\nQubex brings city stores to your door"]}
                 speed={50}
                 pauseDuration={3000}
                 singleLine={false}
                 resetOnComplete={true}
                 className="attention-slogan"
-              /> */}
-              Your Needs, our responsibility. Qubex brings city stores to your door.
+              />
             </p>
           </div>
 
@@ -119,15 +118,14 @@ const Navigation = () => {
             {/* Slogan in mobile menu */}
             <div className="px-4">
               <p className="font-bold text-sm text-center py-2">
-                {/* <TypingAnimation 
+                <TypingAnimation 
                   texts={["Your Needs, our responsibility\nQubex brings city stores to your door"]}
                   speed={50}
                   pauseDuration={3000}
                   singleLine={false}
                   resetOnComplete={true}
                   className="attention-slogan"
-                /> */}
-                Your Needs, our responsibility. Qubex brings city stores to your door.
+                />
               </p>
             </div>
             
