@@ -92,8 +92,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
                 <Mail className="h-4 w-4 text-orange-600" />
-                <a href="mailto:gugulothrajkumar257@gmail.com" className="hover:text-orange-600 transition-colors">
-                  gugulothrajkumar257@gmail.com
+                <a href="mailto:Raj@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
+                  Raj@qubexdeliver.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm font-bold text-gray-700">
@@ -113,6 +113,8 @@ const Footer = () => {
               Official registration documents (GST, LLP, etc.) are in process.
             </p>
           </div>
+          <p className="font-bold text-gray-800">Qubex BuyNdeliver</p>
+          <p className="font-bold text-gray-800">Powered by QuickBuy Boy — India's trusted express delivery partner.</p>
           <p className="font-bold text-gray-800">&copy; {new Date().getFullYear()} Qubex. All rights reserved.</p>
           <div className="mt-2 flex flex-col items-center gap-2">
             <p className="font-bold text-gray-800">Developed by BakwasssCoder</p>
