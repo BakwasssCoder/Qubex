@@ -250,7 +250,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted Delivery Partners</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We collaborate with the best logistics partners to ensure your deliveries arrive safely and on time.
+              We use trusted logistics networks to ensure your deliveries arrive safely and on time.
             </p>
           </div>
 

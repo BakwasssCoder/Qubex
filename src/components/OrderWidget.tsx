@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -34,6 +34,17 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
   const [showPayment, setShowPayment] = useState(false);
   const [orderData, setOrderData] = useState<OrderFormData | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // Scroll to top when form opens
+  useEffect(() => {
+    if (isOpen && isSticky) {
+      // Scroll to top of page smoothly
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }, [isOpen, isSticky]);
 
   const form = useForm<OrderFormData>({
     resolver: zodResolver(orderSchema),
@@ -255,10 +266,10 @@ Please confirm the final price and delivery time. Thank you!`;
           <Button
             onClick={() => setIsOpen(true)}
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg gap-2 rounded-full h-14 px-6 hover:from-orange-600 hover:to-orange-700"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg gap-2 rounded-full h-14 w-14 md:h-14 md:w-auto md:px-6 hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
           >
-            <Package className="h-5 w-5" />
-            Book Service
+            <Package className="h-5 w-5 md:mr-2" />
+            <span className="hidden md:inline">Book Service</span>
           </Button>
         )}
 
