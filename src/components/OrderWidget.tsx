@@ -79,10 +79,67 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
         scheduled: "Scheduled delivery",
       };
 
-      // Changed "Payment pending" to "Verifying...."
-      const paymentRef = orderData.payment_ref ? `(Ref: ${orderData.payment_ref})` : "(Verifying....)";
+      // Format message based on whether reference ID is provided
+      let message = `Hello Qubex Team,
 
-      // Removed estimated price from the message
+I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
+
+📍 Delivery Address: ${orderData.address}
+
+📦 Items Needed:
+${orderData.items}
+
+⏰ Urgency: ${urgencyMap[orderData.urgency]}
+💳 Payment: UPI (Payment verifying)`;
+
+      // Add transaction ID if provided
+      if (orderData.payment_ref) {
+        message += `
+
+Transaction ID: ${orderData.payment_ref}`;
+      }
+
+      message += `
+
+Please confirm the final price and delivery time. Thank you!`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/919515850682?text=${encodedMessage}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappUrl, "_blank");
+
+      toast.success("Order request sent! Redirecting to WhatsApp...");
+      form.reset();
+      setShowPayment(false);
+      setOrderData(null);
+    } catch (error) {
+      console.error("Error submitting order:", error);
+      toast.error("Failed to submit order. Please try again or call us directly.");
+    }
+  };
+
+  // New function to handle continuing without payment
+  const handleContinueWithoutPayment = async () => {
+    if (!orderData) return;
+
+    try {
+      // Save to local context instead of database
+      addOrder({
+        customer: orderData.name,
+        item: orderData.items,
+        status: "Pending",
+        date: new Date().toISOString().split('T')[0],
+      });
+
+      // Create WhatsApp deep link
+      const urgencyMap = {
+        now: "URGENT - Now",
+        within_24h: "Within 24 hours",
+        scheduled: "Scheduled delivery",
+      };
+
+      // For continuing without payment, show "Payment pending"
       const message = `Hello Qubex Team,
 
 I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
@@ -93,7 +150,7 @@ I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
 ${orderData.items}
 
 ⏰ Urgency: ${urgencyMap[orderData.urgency]}
-💳 Payment: UPI ${paymentRef}
+💳 Payment: UPI (Payment pending)
 
 Please confirm the final price and delivery time. Thank you!`;
 
@@ -129,7 +186,11 @@ Please confirm the final price and delivery time. Thank you!`;
         </p>
         
         <div className="bg-background/50 rounded-xl p-6 mb-6 flex flex-col items-center">
-          <QRCodeSVG value="upi://pay?pa=8106438953@ybl&pn=Qubex&cu=INR" size={200} />
+          <div className="text-center mb-4">
+            <h3 className="font-bold text-lg">Pay ₹200 Advance</h3>
+            <p className="text-sm text-muted-foreground">Scan QR to pay directly</p>
+          </div>
+          <QRCodeSVG value="upi://pay?pa=8106438953@ybl&pn=Qubex&am=200&cu=INR" size={200} />
           <div className="mt-4 flex items-center gap-2">
             <code className="bg-background px-3 py-2 rounded text-sm">8106438953@ybl</code>
             <Button
@@ -178,7 +239,7 @@ Please confirm the final price and delivery time. Thank you!`;
                 className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold gap-2 hover:from-yellow-500 hover:to-orange-600"
               >
                 <Phone className="h-4 w-4" />
-                Confirm on WhatsApp
+                Confirm via WhatsApp
               </Button>
             </div>
           </form>
@@ -339,7 +400,7 @@ const OrderForm = ({ form, onSubmit, compact = false }: OrderFormProps) => {
         <div className="pt-4 space-y-2">
           <Button type="submit" className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold gap-2 hover:from-yellow-500 hover:to-orange-600">
             <Package className="h-4 w-4" />
-            Continue to Payment
+            Continue via WhatsApp
           </Button>
         </div>
       </form>

@@ -57,13 +57,18 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4 text-gray-900">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/privacy" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
+                <Link to="/privacy-policy" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
+                <Link to="/terms-of-service" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors">
+                  Refund Policy
                 </Link>
               </li>
               <li>
@@ -92,8 +97,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
                 <Mail className="h-4 w-4 text-orange-600" />
-                <a href="mailto:Raj@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
-                  Raj@qubexdeliver.com
+                <a href="mailto:aniket@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
+                  aniket@qubexdeliver.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm font-bold text-gray-700">
@@ -113,9 +118,16 @@ const Footer = () => {
               Official registration documents (GST, LLP, etc.) are in process.
             </p>
           </div>
-          <p className="font-bold text-gray-800">Qubex BuyNdeliver</p>
-          <p className="font-bold text-gray-800">Powered by QuickBuy Boy — India's trusted express delivery partner.</p>
-          <p className="font-bold text-gray-800">&copy; {new Date().getFullYear()} Qubex. All rights reserved.</p>
+          
+          {/* Business Info Section */}
+          <section id="footer-info" className="text-sm text-gray-500 mb-4">
+            <p>© 2025 Qubex: BuyNDeliver™ — An initiative by QuickBuy Boy.</p>
+            <p>Registered under MSME (Under Registration).</p>
+            <p>Helpline: +91 95158 50682 | Email: aniket@qubexdeliver.com</p>
+            <p>Operational Locations: Delhi | Hyderabad | Patna | Tamil Nadu</p>
+            <p>We are committed to transparent, verified, and human-assisted deliveries.</p>
+          </section>
+          
           <div className="mt-2 flex flex-col items-center gap-2">
             <p className="font-bold text-gray-800">Developed by BakwasssCoder</p>
             <a 

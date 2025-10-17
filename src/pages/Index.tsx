@@ -42,6 +42,9 @@ const Index = () => {
               <p className="text-sm md:text-base font-bold text-white">
                 Made in India, Made for India
               </p>
+              <p className="text-sm md:text-base font-bold text-white mt-2">
+                An initiative by QuickBuy Boy — India's trusted on-demand delivery network.
+              </p>
             </div>
             
             <p className="text-lg md:text-xl mb-4 text-white max-w-3xl mx-auto font-medium">
@@ -251,38 +254,69 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 max-w-7xl mx-auto items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-9 gap-8 max-w-7xl mx-auto items-center justify-center">
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/dhl.svg" alt="DHL" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/dhl-logo-transparent-free-png.webp" alt="DHL" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">DHL</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/dtdc.svg" alt="DTDC" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/dtdc.jpg" alt="DTDC" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">DTDC</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/bluedart.svg" alt="BlueDart" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/blue-dart-logo-freelogovectors.jpg" alt="BlueDart" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">BlueDart</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/fedex.svg" alt="FedEx" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/fedex.jpg" alt="FedEx" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">FedEx</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/porter.svg" alt="Porter" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/porter.jpg" alt="Porter" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">Porter</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/wefast.svg" alt="Wefast" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/wefast.jpg" alt="Wefast" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">Wefast</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/cargo.svg" alt="Cargo Services" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/cargo.jpg" alt="Cargo Services" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">Cargo</span>
             </div>
             <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
-              <img src="/logos/traincargo.svg" alt="Train Cargo Services" className="w-24 h-24 mb-4 object-contain" />
+              <img src="/logos/cargotrain.jpg" alt="Train Cargo Services" className="w-24 h-24 mb-4 object-contain rounded-lg" />
               <span className="font-semibold text-lg">Train Cargo</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl shadow-elegant">
+              <img src="/logos/rapido.jpg" alt="Rapido" className="w-24 h-24 mb-4 object-contain rounded-lg" />
+              <span className="font-semibold text-lg">Rapido</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-10 bg-gradient-to-r from-orange-50 to-green-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900">Why Trust Qubex?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-sm">
+                <span className="text-green-600 font-bold">✓</span>
+                <span className="text-sm font-medium text-gray-700">Verified MSME under registration</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-sm">
+                <span className="text-green-600 font-bold">✓</span>
+                <span className="text-sm font-medium text-gray-700">Secured by SSL Certificate</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-sm">
+                <span className="text-green-600 font-bold">✓</span>
+                <span className="text-sm font-medium text-gray-700">Verified Delivery Partners: DHL | DTDC | FedEx</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-sm">
+                <span className="text-green-600 font-bold">✓</span>
+                <span className="text-sm font-medium text-gray-700">Powered by QuickBuy Boy</span>
+              </div>
             </div>
           </div>
         </div>
