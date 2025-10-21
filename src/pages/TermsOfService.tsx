@@ -100,7 +100,7 @@ const TermsOfService = () => {
               <h2 className="text-xl font-bold mb-4">Contact Information</h2>
               <p>If you have any questions about these Terms, please contact us at:</p>
               <p className="mt-2">
-                Email: aniket@qubexdeliver.com<br />
+                Email: getsupport@qubexdeliver.com<br />
                 Phone: +91 95158 50682
               </p>
             </section>

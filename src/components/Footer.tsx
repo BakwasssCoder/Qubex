@@ -97,8 +97,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
                 <Mail className="h-4 w-4 text-orange-600" />
-                <a href="mailto:aniket@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
-                  aniket@qubexdeliver.com
+                <a href="mailto:getsupport@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
+                  getsupport@qubexdeliver.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm font-bold text-gray-700">
@@ -123,7 +123,7 @@ const Footer = () => {
           <section id="footer-info" className="text-sm text-gray-500 mb-4">
             <p>© 2025 Qubex: BuyNDeliver™ — An initiative by QuickBuy Boy.</p>
             <p>Registered under MSME (Under Registration).</p>
-            <p>Helpline: +91 95158 50682 | Email: aniket@qubexdeliver.com</p>
+            <p>Helpline: +91 95158 50682 | Email: getsupport@qubexdeliver.com</p>
             <p>Operational Locations: Delhi | Hyderabad | Patna | Tamil Nadu</p>
             <p>We are committed to transparent, verified, and human-assisted deliveries.</p>
           </section>
@@ -179,7 +179,7 @@ const Footer = () => {
             </a>
             
             <a 
-              href="https://linkedin.com/company/qubexdeliver" 
+              href="https://www.linkedin.com/in/quickbuy-boy-qubex-17b02438a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-bold text-gray-700 hover:text-orange-600 transition-colors bg-gray-100 px-4 py-2 rounded-full"

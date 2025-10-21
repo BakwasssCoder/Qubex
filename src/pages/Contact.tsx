@@ -24,8 +24,8 @@ const Contact = () => {
           <div className="glass-panel p-8 rounded-2xl">
             <Mail className="h-12 w-12 text-accent mb-4" />
             <h3 className="font-bold mb-2">Email Us</h3>
-            <a href="mailto:aniket@qubexdeliver.com" className="text-accent hover:underline">
-              aniket@qubexdeliver.com
+            <a href="mailto:getsupport@qubexdeliver.com" className="text-accent hover:underline">
+              getsupport@qubexdeliver.com
             </a>
           </div>
         </div>
@@ -36,7 +36,7 @@ const Contact = () => {
             <section id="contact-info" className="text-sm text-gray-600">
               <p className="font-bold text-lg mb-2">© 2025 Qubex: BuyNDeliver™ — An initiative by QuickBuy Boy.</p>
               <p className="mb-1">Registered under MSME (Under Registration).</p>
-              <p className="mb-1">Helpline: +91 95158 50682 | Email: aniket@qubexdeliver.com</p>
+              <p className="mb-1">Helpline: +91 95158 50682 | Email: getsupport@qubexdeliver.com</p>
               <p className="mb-1">Operational Locations: Delhi | Hyderabad | Patna | Tamil Nadu</p>
               <p>We are committed to transparent, verified, and human-assisted deliveries.</p>
             </section>
