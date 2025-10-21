@@ -88,7 +88,7 @@ const RefundPolicy = () => {
               <h2 className="text-xl font-bold mb-4">Contact for Refund Requests</h2>
               <p>If you wish to request a refund, please contact us at:</p>
               <p className="mt-2">
-                Email: getsupport@qubexdeliver.com<br />
+                Email: support@qubexdeliver.com<br />
                 Phone: +91 95158 50682<br />
                 WhatsApp: +91 95158 50682
               </p>

@@ -97,8 +97,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm font-bold text-gray-700">
                 <Mail className="h-4 w-4 text-orange-600" />
-                <a href="mailto:getsupport@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
-                  getsupport@qubexdeliver.com
+                <a href="mailto:support@qubexdeliver.com" className="hover:text-orange-600 transition-colors">
+                  support@qubexdeliver.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm font-bold text-gray-700">
@@ -123,7 +123,7 @@ const Footer = () => {
           <section id="footer-info" className="text-sm text-gray-500 mb-4">
             <p>© 2025 Qubex: BuyNDeliver™ — An initiative by QuickBuy Boy.</p>
             <p>Registered under MSME (Under Registration).</p>
-            <p>Helpline: +91 95158 50682 | Email: getsupport@qubexdeliver.com</p>
+            <p>Helpline: +91 95158 50682 | Email: support@qubexdeliver.com</p>
             <p>Operational Locations: Delhi | Hyderabad | Patna | Tamil Nadu</p>
             <p>We are committed to transparent, verified, and human-assisted deliveries.</p>
           </section>
