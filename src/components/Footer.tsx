@@ -232,9 +232,11 @@ const Footer = () => {
               href="https://instagram.com/anikettt.tsx" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-bold text-gray-800 hover:text-orange-600 transition-colors"
+              className="font-bold text-gray-800 hover:text-orange-600 transition-colors flex flex-col items-center"
             >
-              Developed by BakwasssCoder
+              <span>Developed By:</span>
+              <span>BakwasssCoder</span>
+              <span className="text-sm">aka Aniket</span>
             </a>
           </div>
         </div>
