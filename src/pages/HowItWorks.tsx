@@ -1,4 +1,4 @@
-import { Check, MessageSquare, Search, Truck, CreditCard, Phone, Heart, Globe, Users } from "lucide-react";
+import { Check, MessageSquare, Search, Truck, Phone, Heart, Globe, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -45,10 +45,6 @@ const HowItWorks = () => {
                     <Check className="h-5 w-5 text-orange-600 mt-0.5" />
                     <span className="text-sm">Mention urgency: Now, within 24h, or scheduled</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
-                    <span className="text-sm">UPI payment required before confirmation</span>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -88,58 +84,26 @@ const HowItWorks = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-shrink-0">
                 <div className="w-24 h-24 bg-orange-100 rounded-2xl flex items-center justify-center shadow-elegant border-2 border-orange-200">
-                  <CreditCard className="h-12 w-12 text-orange-600" />
+                  <Truck className="h-12 w-12 text-orange-600" />
                 </div>
               </div>
               <div className="flex-1">
                 <div className="text-orange-600 font-bold mb-2">Step 3</div>
-                <h2 className="text-2xl font-bold mb-3">Pay via UPI</h2>
-                <p className="text-muted-foreground mb-4">
-                  Review the quote and complete payment using our UPI QR code. Scan the QR or use our UPI ID (8106438953@ybl). 
-                  Once payment is confirmed, we proceed with sourcing and delivery.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
-                    <span className="text-sm">Pay via any UPI app (GPay, PhonePe, Paytm)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
-                    <span className="text-sm">Share UTR/Transaction ID with us on WhatsApp</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
-                    <span className="text-sm">Invoice sent after payment confirmation</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="flex-shrink-0 md:order-2">
-                <div className="w-24 h-24 bg-green-100 rounded-2xl flex items-center justify-center shadow-elegant border-2 border-green-200">
-                  <Truck className="h-12 w-12 text-green-600" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="text-green-600 font-bold mb-2">Step 4</div>
                 <h2 className="text-2xl font-bold mb-3">Delivery to Your Doorstep</h2>
                 <p className="text-muted-foreground mb-4">
-                  Our trained delivery partners bring your order directly to your address. For urgent orders, expect delivery within 30-60 minutes. 
-                  Standard orders arrive within 24 hours. Village deliveries may take up to 48 hours depending on distance.
+                  Once the quote is confirmed, we proceed with sourcing and delivery of your items.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-green-600 mt-0.5" />
+                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
                     <span className="text-sm">Track your delivery via WhatsApp updates</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-green-600 mt-0.5" />
+                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
                     <span className="text-sm">Contactless delivery available</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-green-600 mt-0.5" />
+                    <Check className="h-5 w-5 text-orange-600 mt-0.5" />
                     <span className="text-sm">Bills and receipts included in package</span>
                   </li>
                 </ul>

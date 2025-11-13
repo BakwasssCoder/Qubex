@@ -85,8 +85,8 @@ const Index = () => {
                 <div className="text-sm font-bold text-gray-700">Verified</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-orange-600 mb-1">UPI</div>
-                <div className="text-sm font-bold text-gray-700">Payment</div>
+                <div className="text-2xl font-bold text-orange-600 mb-1">Fast</div>
+                <div className="text-sm font-bold text-gray-700">Delivery</div>
               </div>
             </div>
           </div>
@@ -226,9 +226,9 @@ const Index = () => {
               <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl font-bold text-primary mx-auto mb-4">
                 3
               </div>
-              <h3 className="text-xl font-bold mb-3">Pay & Receive</h3>
+              <h3 className="text-xl font-bold mb-3">Receive Items</h3>
               <p className="text-muted-foreground">
-                Complete payment via UPI (scan QR or use our UPI ID). Track your order via WhatsApp updates. Receive your items at your doorstep with bills included.
+                We proceed with sourcing and delivery of your items. Track your order via WhatsApp updates. Receive your items at your doorstep with bills included.
               </p>
             </div>
           </div>

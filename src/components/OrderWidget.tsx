@@ -7,9 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Package, Phone, Copy, CheckCircle2 } from "lucide-react";
+import { Package, Phone } from "lucide-react";
 import { toast } from "sonner";
-import { QRCodeSVG } from "qrcode.react";
 import { useAppContext } from "@/context/AppContext";
 
 const orderSchema = z.object({
@@ -19,7 +18,6 @@ const orderSchema = z.object({
   address: z.string().trim().min(1, "Address is required").max(500, "Address too long"),
   items: z.string().trim().min(1, "Please list items").max(1000, "Items list too long"),
   urgency: z.enum(["now", "within_24h", "scheduled"]),
-  payment_ref: z.string().trim().optional(),
 });
 
 type OrderFormData = z.infer<typeof orderSchema>;
@@ -31,9 +29,6 @@ interface OrderWidgetProps {
 const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
   const { addOrder } = useAppContext();
   const [isOpen, setIsOpen] = useState(!isSticky);
-  const [showPayment, setShowPayment] = useState(false);
-  const [orderData, setOrderData] = useState<OrderFormData | null>(null);
-  const [copied, setCopied] = useState(false);
 
   // Scroll to top when form opens
   useEffect(() => {
@@ -55,7 +50,6 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
       address: "",
       items: "",
       urgency: "now",
-      payment_ref: "",
     },
   });
 
@@ -67,18 +61,11 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
   };
 
   const onSubmit = async (data: OrderFormData) => {
-    setOrderData(data);
-    setShowPayment(true);
-  };
-
-  const handlePaymentConfirm = async () => {
-    if (!orderData) return;
-
     try {
       // Save to local context instead of database
       addOrder({
-        customer: orderData.name,
-        item: orderData.items,
+        customer: data.name,
+        item: data.items,
         status: "Pending",
         date: new Date().toISOString().split('T')[0],
       });
@@ -90,78 +77,17 @@ const OrderWidget = ({ isSticky = false }: OrderWidgetProps) => {
         scheduled: "Scheduled delivery",
       };
 
-      // Format message based on whether reference ID is provided
-      let message = `Hello Qubex Team,
-
-I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
-
-📍 Delivery Address: ${orderData.address}
-
-📦 Items Needed:
-${orderData.items}
-
-⏰ Urgency: ${urgencyMap[orderData.urgency]}
-💳 Payment: UPI (Payment verifying)`;
-
-      // Add transaction ID if provided
-      if (orderData.payment_ref) {
-        message += `
-
-Transaction ID: ${orderData.payment_ref}`;
-      }
-
-      message += `
-
-Please confirm the final price and delivery time. Thank you!`;
-
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/919515850682?text=${encodedMessage}`;
-
-      // Redirect to WhatsApp
-      window.open(whatsappUrl, "_blank");
-
-      toast.success("Order request sent! Redirecting to WhatsApp...");
-      form.reset();
-      setShowPayment(false);
-      setOrderData(null);
-    } catch (error) {
-      console.error("Error submitting order:", error);
-      toast.error("Failed to submit order. Please try again or call us directly.");
-    }
-  };
-
-  // New function to handle continuing without payment
-  const handleContinueWithoutPayment = async () => {
-    if (!orderData) return;
-
-    try {
-      // Save to local context instead of database
-      addOrder({
-        customer: orderData.name,
-        item: orderData.items,
-        status: "Pending",
-        date: new Date().toISOString().split('T')[0],
-      });
-
-      // Create WhatsApp deep link
-      const urgencyMap = {
-        now: "URGENT - Now",
-        within_24h: "Within 24 hours",
-        scheduled: "Scheduled delivery",
-      };
-
-      // For continuing without payment, show "Payment pending"
+      // Format message
       const message = `Hello Qubex Team,
 
-I am ${orderData.name} (${orderData.phone}) from ${orderData.city}.
+I am ${data.name} (${data.phone}) from ${data.city}.
 
-📍 Delivery Address: ${orderData.address}
+📍 Delivery Address: ${data.address}
 
 📦 Items Needed:
-${orderData.items}
+${data.items}
 
-⏰ Urgency: ${urgencyMap[orderData.urgency]}
-💳 Payment: UPI (Payment pending)
+⏰ Urgency: ${urgencyMap[data.urgency]}
 
 Please confirm the final price and delivery time. Thank you!`;
 
@@ -173,91 +99,11 @@ Please confirm the final price and delivery time. Thank you!`;
 
       toast.success("Order request sent! Redirecting to WhatsApp...");
       form.reset();
-      setShowPayment(false);
-      setOrderData(null);
     } catch (error) {
       console.error("Error submitting order:", error);
       toast.error("Failed to submit order. Please try again or call us directly.");
     }
   };
-
-  const copyUpiId = () => {
-    navigator.clipboard.writeText("8106438953@ybl");
-    setCopied(true);
-    toast.success("UPI ID copied!");
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  if (showPayment && orderData) {
-    return (
-      <div className="glass-panel shadow-elegant rounded-2xl p-6 md:p-8 max-w-md mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">Pay via UPI</h2>
-        <p className="text-sm text-muted-foreground text-center mb-6">
-          Complete payment before order confirmation
-        </p>
-        
-        <div className="bg-background/50 rounded-xl p-6 mb-6 flex flex-col items-center">
-          <div className="text-center mb-4">
-            <h3 className="font-bold text-lg">Pay ₹200 Advance</h3>
-            <p className="text-sm text-muted-foreground">Scan QR to pay directly</p>
-          </div>
-          <QRCodeSVG value="upi://pay?pa=8106438953@ybl&pn=Qubex&am=200&cu=INR" size={200} />
-          <div className="mt-4 flex items-center gap-2">
-            <code className="bg-background px-3 py-2 rounded text-sm">8106438953@ybl</code>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={copyUpiId}
-              className="gap-2"
-            >
-              {copied ? <CheckCircle2 className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-              {copied ? "Copied!" : "Copy"}
-            </Button>
-          </div>
-        </div>
-
-        <Form {...form}>
-          <form className="space-y-4">
-            <FormField
-              control={form.control}
-              name="payment_ref"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>UTR / Transaction ID (Optional)</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter transaction reference" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="flex gap-3">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => {
-                  setShowPayment(false);
-                  setOrderData(null);
-                }}
-                className="flex-1"
-              >
-                Back
-              </Button>
-              <Button
-                type="button"
-                onClick={handlePaymentConfirm}
-                className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold gap-2 hover:from-yellow-500 hover:to-orange-600"
-              >
-                <Phone className="h-4 w-4" />
-                Confirm via WhatsApp
-              </Button>
-            </div>
-          </form>
-        </Form>
-      </div>
-    );
-  }
 
   if (isSticky) {
     return (
